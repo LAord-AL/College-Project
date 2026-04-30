@@ -35,3 +35,4 @@ https://github.com/LAord-AL/College-Project
 - Dev33 (diwas887766@gmail.com)
 - Kritagya Gaming (kritagya0933@gmail.com)
 -   (bipinadhikari@gmail.com)
+- harisn726 (xedev99@gmail.com)
