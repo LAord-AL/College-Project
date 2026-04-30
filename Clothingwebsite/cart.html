@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - Clothing Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="top-bar">
+      <div class="search-bar">
+        <button class="search-icon">🔍</button>
+        <form class="search-form">
+          <input type="text" placeholder="Search..">
+          <button type="submit">Go</button>
+        </form>
+      </div>
+      <div class="logo">
+        <img src="1000002740.jpg" alt="Store Logo">
+      </div>
+      <a href="cart.html" class="cart">
+        <img src="cartlogo.webp" alt="Shopping Cart" class="cart-icon">
+      </a>
+    </div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section id="page-header">
+    <h1>Shopping Cart</h1>
+    <p>Review your items before checkout</p>
+  </section>
+
+  <!-- CART SECTION -->
+  <section id="cart">
+    <div class="cart-container">
+      <!-- Cart Items -->
+      <div class="cart-items">
+        <table width="100%">
+          <thead>
+            <tr>
+              <td>Product</td>
+              <td>Price</td>
+              <td>Quantity</td>
+              <td>Total</td>
+              <td>Remove</td>
+            </tr>
+            </thead>
+            <tbody>
+              <!-- Cart Item 1 -->
+              <tr class="cart-item">
+                <td>
+                  <a href="#" class="product-link">
+                    <img src="ChatGPT Image Apr 18, 2026, 02_34_50 PM.png" alt="Classic Tank Top" class="cart-product-img">
+                    <span>Class Tank Top</span>
+                  </a>
+                </td>
+                <td>₨1,200</td>
+                <td>
+                  <div class="quantity-selector">
+                    <button class="qty-btn">-</button>
+                    <input type="number" value="2" min="1" class="qty-input">
+                    <button class="qty-btn">+</button>
+                  </div>
+                </td>
+                <td>₨2,400</td>
+                <td><a href="#" class="remove-btn">Remove</a></td>
+              </tr>
+
+              <!-- Cart Item 2 -->
+              <tr class="cart-item">
+                <td>
+                  <a href="#" class="product-link">
+                    <img src="Linen Pants.png" alt="Slim Fit Pants" class="cart-product-img">
+                    <span>Linen Pants</span>
+                  </a>
+                </td>
+                <td>₨2,199</td>
+                <td>
+                  <div class="quantity-selector">
+                    <button class="qty-btn">-</button>
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <button class="qty-btn">+</button>
+                  </div>
+                </td>
+                <td>₨2,199</td>
+                <td><a href="#" class="remove-btn">Remove</a></td>
+              </tr>
+
+              <!-- Cart Item 3 -->
+              <tr class="cart-item">
+                <td>
+                  <a href="#" class="product-link">
+                    <img src="White Midi.png" alt="Summer Dress" class="cart-product-img">
+                    <span>White Midi</span>
+                  </a>
+                </td>
+                <td>₨2,599</td>
+                <td>
+                  <div class="quantity-selector">
+                    <button class="qty-btn">-</button>
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <button class="qty-btn">+</button>
+                  </div>
+                </td>
+                <td>₨2,599</td>
+                <td><a href="#" class="remove-btn">Remove</a></td>
+              </tr>
+
+              <!-- Cart Item 4 -->
+              <tr class="cart-item">
+                <td>
+                  <a href="#" class="product-link">
+                    <img src="Harrington Jacket.png" alt="Casual Jacket" class="cart-product-img">
+                    <span>Harrington Jacket</span>
+                  </a>
+                </td>
+                <td>₨2,699</td>
+                <td>
+                  <div class="quantity-selector">
+                    <button class="qty-btn">-</button>
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <button class="qty-btn">+</button>
+                  </div>
+                </td>
+                <td>₨6,799</td>
+                <td><a href="#" class="remove-btn">Remove</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+          <div class="summary-card">
+            <h3>Order Summary</h3>
+            
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span class="price">₨13,997</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Shipping:</span>
+              <span class="price">₨200</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Tax:</span>
+              <span class="price">₨500</span>
+            </div>
+
+            <hr>
+
+            <div class="summary-row total">
+              <span>Total:</span>
+              <span class="price">₨14,697</span>
+            </div>
+
+            <button class="checkout-btn">Proceed to Checkout</button>
+
+            <a href="men.html" class="continue-shopping">Continue Shopping</a>
+          </div>
+
+          <!-- Promo Code Section -->
+          <div class="promo-section">
+            <h4>Promo Code</h4>
+            <form class="promo-form">
+              <input type="text" placeholder="Enter promo code" class="promo-input">
+              <button type="submit" class="promo-btn">Apply</button>
+            </form>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="social-icons">
+      <a href="#"><img src="facebooklogo.png" alt="Facebook"></a>
+      <a href="#"><img src="xlogo.png" alt="Twitter"></a>
+      <a href="#"><img src="insta;pgp.png" alt="Instagram"></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

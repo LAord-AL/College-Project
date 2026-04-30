@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Watermelon</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* GLOBAL STYLES  */
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+    flex: 1;
+    }
+    h1 {
+      font-size: 50px;
+      line-height: 64px;
+      color: #222;
+    }
+
+    h2 {
+      font-size: 46px;
+      line-height: 54px;
+      color: #222;
+    }
+
+    h3 {
+      font-size: 18px;
+      color: #222;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 16px;
+      color: #465b52;
+      margin: 15px 0 20px 0;
+      line-height: 1.6;
+    }
+
+    /*  HEADER & NAVIGATION */
+    #header {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      background: #000000;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    .top-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 15px 80px;
+      gap: 0;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-self: start;
+    }
+
+    .search-icon {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: white;
+      padding: 5px;
+    }
+
+    .search-form {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .search-form input {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      width: 250px;
+      font-size: 14px;
+    }
+
+    .search-form button {
+      padding: 10px 20px;
+      background-color: #088178;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-form button:hover {
+      background-color: #26a69a;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: center;
+    }
+
+    .logo img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin: 0 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .cart {
+      display: flex;
+      justify-self: end;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .cart img {
+      width: 35px;
+      height: 35px;
+      transition: transform 0.3s ease;
+    }
+
+    .cart:hover img {
+      transform: scale(1.1);
+    }
+
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 80px;
+      background: #000000;
+    }
+
+    .navbar ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+    }
+
+    .navbar li {
+      list-style: none;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      transition: all 0.4s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #26a69a;
+    }
+
+    
+    .navbar a:hover::after {
+      content: "";
+      width: 30%;
+      height: 2px;
+      background: #088178;
+      position: absolute;
+      bottom: -4px;
+      left: 20px;
+    }
+
+    /* PAGE HEADER */
+    #page-header {
+      background: linear-gradient(135deg, #088178, #26a69a);
+      color: white;
+      padding: 60px 80px;
+      text-align: center;
+      margin: 0;
+    }
+
+    #page-header h1 {
+      color: white;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    #page-header p {
+      color: #f0f0f0;
+      font-size: 18px;
+      margin: 10px 0 0;
+    }
+
+    /* ABOUT CONTENT SECTIONS */
+    .about-section {
+      padding: 60px 80px;
+      background-color: #fafafa;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .about-section:nth-child(even) {
+      background-color: #ffffff;
+    }
+
+    .section-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 36px;
+      color: #088178;
+      margin-bottom: 40px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      letter-spacing: 1px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #088178;
+      border-radius: 2px;
+    }
+
+    /*  What We Do Grid */
+    .two-column-grid {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .content-text {
+      flex: 1.2;
+    }
+
+    .content-text p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #465b52;
+      margin-bottom: 20px;
+    }
+
+    .content-image {
+      flex: 0.9;
+      background: linear-gradient(135deg, #e8f0ef, #d4e6e3);
+      border-radius: 20px;
+      padding: 50px 30px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .content-image i {
+      font-size: 4rem;
+      color: #088178;
+      margin: 0 10px;
+    }
+
+    .content-image p {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #088178;
+      font-weight: 600;
+    }
+
+    /* Animated Logo Loop Section */
+    .logo-loop-section {
+      background: linear-gradient(135deg, #f5f5f5, #ffffff);
+      text-align: center;
+      padding: 50px 80px;
+    }
+
+    .animated-logo-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background: #ffffff;
+      padding: 25px 50px;
+      border-radius: 100px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      animation: softPulse 3s ease-in-out infinite;
+    }
+    .simple-logo-text {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #088178;
+      letter-spacing: 3px;
+    }
+    /* Team Grid - 5 Members with Grade, Roll, Contribution */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      margin-top: 30px;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 22px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e8e8e8;
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      border-color: #088178;
+    }
+
+    .member-photo {
+      width: 110px;
+      height: 110px;
+      background: linear-gradient(135deg, #d4e6e3, #e8f0ef);
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #088178;
+    }
+
+    .member-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #222;
+    }
+
+    .member-role {
+      background: #08817815;
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #088178;
+      margin: 12px 0 15px;
+    }
+
+    .details-list {
+      text-align: left;
+      background: #f8f8f8;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-top: 12px;
+      font-size: 0.85rem;
+    }
+
+    .details-list p {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+
+    .details-list i {
+      width: 24px;
+      color: #088178;
+    }
+
+    .contribution {
+      margin-top: 12px;
+      border-top: 1px solid #e8e8e8;
+      padding-top: 12px;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: #088178;
+      font-weight: 500;
+    }
+
+    /* Vision Section */
+    .vision-section {
+      background: linear-gradient(135deg, #e8f0ef, #fafafa);
+      text-align: center;
+      padding: 70px 80px;
+    }
+
+    .vision-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 30px;
+      padding: 50px 40px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    }
+
+    .vision-card h3 {
+      font-size: 32px;
+      color: #088178;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .vision-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #465b52;
+      margin-bottom: 15px;
+    }
+
+    .vision-quote {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #088178;
+      margin-top: 25px;
+      font-style: italic;
+    }
+
+    /* Footer  */
+    #footer {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      padding: 40px 0 30px 0;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.2);
+      border-top: 1px solid rgba(136, 129, 120, 0.2);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      padding: 20px 0;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: rgba(136, 129, 120, 0.1);
+      transition: all 0.4s ease;
+      border: 2px solid transparent;
+    }
+
+    .social-icons a:hover {
+      background: linear-gradient(135deg, #088178 0%, #26a69a 100%);
+      transform: translateY(-5px);
+      border-color: #088178;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="top-bar">
+      <div class="search-bar">
+        <button class="search-icon">🔍</button>
+        <form class="search-form">
+          <input type="text" placeholder="Search..">
+          <button type="submit">Go</button>
+        </form>
+      </div>
+      <div class="logo">
+        <img src="1000002740.jpg" alt="Store Logo">
+      </div>
+      <a href="cart.html" class="cart">
+        <img src="cartlogo.webp" alt="Shopping Cart">
+      </a>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="women.html">Women</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+  <section id="page-header">
+    <h1>About Us</h1>
+    <p>Discover the story behind our brand and the team making it happen</p>
+  </section>
+  <div class="logo-loop-section">
+    <div class="animated-logo-container">
+      <span class="simple-logo-text">✦ WATERMELON ✦</span>
+    </div>
+  </div>
+  <section class="about-section">
+    <div class="section-container">
+      <h2 class="section-title">What We Do</h2>
+      <div class="two-column-grid">
+        <div class="content-image">
+          <p>Ethical Fashion • Premium Essentials</p>
+        </div>
+        <div class="content-text">
+          <p><strong>Watermelon offers</strong> curated collections for men and women, from organic cotton streetwear to handcrafted limited editions. We design garments that transcend seasons — versatile, comfortable, and timeless. Beyond apparel, we provide personalized styling, upcycling workshops, and a circular take-back program to reduce waste.</p>
+          <p>Our brand is built on transparency: every order ships carbon-neutral, and we partner with local artisans to preserve traditional crafts. From everyday staples to standout pieces, we merge minimalism with cultural richness, ensuring that fashion is a force for good.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about-section">
+    <div class="section-container">
+      <h2 class="section-title">Meet the Team</h2>
+      <div class="team-grid">
+        
+        <!-- Member 1: Avisekh Lama - Project Lead -->
+        <div class="team-card">
+          <div class="member-photo"></div>
+          <div class="member-name">Avisekh Lama</div>
+          <div class="member-role">Project Lead / Developer</div>
+          <div class="details-list">
+            <p><strong>Grade:</strong> A+</p>
+            <p> <strong>Roll No:</strong> 890</p>
+            <p> <strong>Contribution:</strong> Overall coordination, HTML/CSS development, responsive layout, team integration & final deliverable management.</p>
+          </div>
+          <div class="contribution"> Lead visionary — code & direction</div>
+        </div>
+
+        <!-- Member 2: Harisharan Neupane - Content Writer -->
+        <div class="team-card">
+          <div class="member-photo"></div>
+          <div class="member-name">Harisharan Neupane</div>
+          <div class="member-role">Content Writer & Researcher</div>
+          <div class="details-list">
+            <p><strong>Grade:</strong> A+</p>
+            <p><strong>Roll No:</strong> 888</p>
+            <p><strong>Contribution:</strong> Intel gathering and management, brand story writing, brand voice consistency, and crafting "Our Story/What We Do" narrative.</p>
+          </div>
+          <div class="contribution"> Words & storytelling maestro</div>
+        </div>
+
+        <!-- Member 3: Kritagya Prajapati - Developer -->
+        <div class="team-card">
+          <div class="member-photo"></div>
+          <div class="member-name">Kritagya Prajapati</div>
+          <div class="member-role">HTML/CSS Developer</div>
+          <div class="details-list">
+            <p><strong>Grade:</strong> A+</p>
+            <p><strong>Roll No:</strong> 883</p>
+            <p> <strong>Contribution:</strong> HTML/CSS development — component structuring, styling consistency, cross-browser layout & team section integration.</p>
+          </div>
+          <div class="contribution"> Frontend architecture & CSS</div>
+        </div>
+
+        <!-- Member 4: Bipin Adhikari - Developer (HTML/CSS + JS) -->
+        <div class="team-card">
+          <div class="member-photo"></div>
+          <div class="member-name">Bipin Adhikari</div>
+          <div class="member-role">Frontend & JS Developer</div>
+          <div class="details-list">
+            <p><strong>Grade:</strong> A+</p>
+            <p> <strong>Roll No:</strong> 885</p>
+            <p><strong>Contribution:</strong> HTML/CSS and JS developer — interactive elements, dynamic animations, loop logo enhancement & UX polish.</p>
+          </div>
+          <div class="contribution"> Interactivity & smooth behaviors</div>
+        </div>
+
+        <!-- Member 5: Diwas Karki B.K. - Designer -->
+        <div class="team-card">
+          <div class="member-photo"></div>
+          <div class="member-name">Diwas Karki B.K.</div>
+          <div class="member-role">Lead Designer | Visual & Color</div>
+          <div class="details-list">
+            <p><strong>Grade:</strong> A+</p>
+            <p><strong>Roll No:</strong> 895</p>
+            <p> <strong>Contribution:</strong> Image generations, visual identity, color palette, card styling, logo animation concept & UI moodboards for the brand.</p>
+          </div>
+          <div class="contribution"> Aesthetic soul — brand colors & imagery</div>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 35px; font-size: 0.9rem; color: #088178;">
+         Five passionate creators, one mission — Deliver excellence with style.
+      </p>
+    </div>
+  </section>
+
+  <!-- OUR VISION Section -->
+  <section class="vision-section">
+    <div class="vision-card">
+      <h3>✦ Our Vision ✦</h3>
+      <p>We are focused on building a fashion ecosystem — where every garment respects people, planet, and timeless aesthetics. By 2030, we aim to be a zero-waste, fully circular brand that empowers local artisans and redefines luxury as ethical, inclusive, and bold.</p>
+      <p>Our eyes are on leading conscious fashion with radical transparency and community-first innovation. We believe that style shouldn't cost and every purchase should feel good inside and out.</p>
+      <div class="vision-quote">"Fashion with a future — crafted for change."</div>
+    </div>
+  </section>
+</main>
+  <!-- FOOTER (Exactly matching existing) -->
+  <footer id="footer">
+    <div class="social-icons">
+      <a href="#"><img src="facebooklogo.png" alt="Facebook"></a>
+      <a href="#"><img src="xlogo.png" alt="Twitter"></a>
+      <a href="#"><img src="insta;pgp.png" alt="Instagram"></a>
+    </div>
+  </footer>
+</body>
+</html>
