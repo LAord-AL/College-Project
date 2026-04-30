@@ -14,15 +14,14 @@ A complete e-commerce clothing website with multiple pages:
 
 Features: Responsive design, product images, navigation, and interactive elements.
 
-### YouTube Clone (HTML/CSS)
-A YouTube-like interface built with HTML and CSS:
-- Channel pages
-- Video thumbnails
-- Sidebar navigation
+### E_commerce Website Clone (HTML/CSS)
+A e-commerce interface built with HTML and CSS:
+- Products
+- Highlights
+- Section Pages
 - General styling
 
-### Python Scripts
-Various Python programs for learning and demonstration.
+
 
 ## How to View the Clothing Website
 1. Clone this repository
@@ -33,3 +32,6 @@ https://github.com/LAord-AL/College-Project
 
 ## Contributors
 - LAord-AL (laord12345@gmail.com)
+- Dev33 (diwas887766@gmail.com)
+- Kritagya Gaming (kritagya0933@gmail.com)
+-   (bipinadhikari@gmail.com)
